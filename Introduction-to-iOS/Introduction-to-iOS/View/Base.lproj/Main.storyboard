@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MapVC-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <viewController storyboardIdentifier="MapVC" id="9pv-A4-QxB" userLabel="MapVC" customClass="MapVC" customModule="Introduction_to_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="L2b-4F-39i" customClass="MapManager" customModule="Introduction_to_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dB-cp-shG">
+                                <rect key="frame" x="16" y="563" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="9XH-Hf-dmU"/>
+                                    <constraint firstAttribute="height" constant="45" id="JTD-My-plj"/>
+                                </constraints>
+                                <state key="normal" image="icons8-target-64"/>
+                                <connections>
+                                    <action selector="moveToDeviceLocation:" destination="9pv-A4-QxB" eventType="touchUpInside" id="iWc-FU-sam"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="X4a-9L-F2v">
+                                <rect key="frame" x="156" y="571.5" width="203" height="29"/>
+                                <color key="backgroundColor" red="0.82024973630905151" green="0.90441685914993286" blue="0.98040539026260376" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <segments>
+                                    <segment title="Standart"/>
+                                    <segment title="Satellite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmetedControl:" destination="9pv-A4-QxB" eventType="valueChanged" id="VBa-2r-MXS"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duQ-GC-thR">
+                                <rect key="frame" x="69" y="563" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="8Ic-Ln-K3a"/>
+                                    <constraint firstAttribute="height" constant="45" id="GVD-2m-dex"/>
+                                </constraints>
+                                <state key="normal" image="icons8-map-64"/>
+                                <connections>
+                                    <action selector="moveToDeviceLocation:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Rpg-zt-RuO"/>
+                                    <action selector="showAll:" destination="9pv-A4-QxB" eventType="touchUpInside" id="78b-ZL-3yR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="duQ-GC-thR" firstAttribute="centerY" secondItem="1dB-cp-shG" secondAttribute="centerY" id="0A9-SO-l7b"/>
+                            <constraint firstAttribute="trailing" secondItem="X4a-9L-F2v" secondAttribute="trailing" constant="16" id="0iK-uN-M2h"/>
+                            <constraint firstItem="X4a-9L-F2v" firstAttribute="leading" secondItem="1dB-cp-shG" secondAttribute="trailing" constant="95" id="1Vl-C0-M8p"/>
+                            <constraint firstItem="L2b-4F-39i" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" priority="750" id="4d5-dq-l09"/>
+                            <constraint firstItem="X4a-9L-F2v" firstAttribute="centerY" secondItem="1dB-cp-shG" secondAttribute="centerY" id="RAc-WJ-qSt"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="1dB-cp-shG" secondAttribute="bottom" constant="10" id="TsU-a2-Rk6"/>
+                            <constraint firstItem="L2b-4F-39i" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="WO5-2e-OwN"/>
+                            <constraint firstItem="1dB-cp-shG" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="16" id="dId-Gk-5LP"/>
+                            <constraint firstItem="duQ-GC-thR" firstAttribute="leading" secondItem="1dB-cp-shG" secondAttribute="trailing" constant="8" id="kKu-GA-9wz"/>
+                            <constraint firstAttribute="trailing" secondItem="L2b-4F-39i" secondAttribute="trailing" id="tXh-OU-SnQ"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="L2b-4F-39i" secondAttribute="bottom" id="zDU-AW-Cbq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Map" image="map" id="acW-dT-cKf" userLabel="Map"/>
+                    <connections>
+                        <outlet property="mapView" destination="L2b-4F-39i" id="ElY-a7-hCm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="208.80000000000001" y="17.541229385307346"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController storyboardIdentifier="TabBarController" id="49e-Tb-3d3" customClass="TabBarController" customModule="Introduction_to_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="5Ro-bU-B0S" kind="relationship" relationship="viewControllers" id="rI3-Ln-NR2"/>
+                        <segue destination="6nr-N3-Zoy" kind="relationship" relationship="viewControllers" id="Vba-z7-MfF"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-585" y="18"/>
+        </scene>
+        <!--ListVC-->
+        <scene sceneID="PKH-3X-ZOQ">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="ListVC" storyboardName="List" referencedIdentifier="ListVC" id="5Ro-bU-B0S" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="ufQ-z6-0bK"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X0N-UU-cL3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-829" y="476"/>
+        </scene>
+        <!--MoreVC-->
+        <scene sceneID="3Yb-kj-Hjb">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="MoreVC" storyboardName="More" referencedIdentifier="MoreVC" id="6nr-N3-Zoy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="0up-kp-MJd"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tLn-Eg-zEQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-350" y="476"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icons8-map-64" width="64" height="64"/>
+        <image name="icons8-target-64" width="64" height="64"/>
+        <image name="map" width="26" height="26"/>
+    </resources>
+</document>
